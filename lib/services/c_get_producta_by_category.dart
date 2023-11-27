@@ -9,12 +9,17 @@ class GetProductsByCategory {
     http.Response response = await http.get(
         Uri.parse('https://fakestoreapi.com/products/category/$categoryName'));
 
-    List<dynamic> mainList = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      List<dynamic> mainList = jsonDecode(response.body);
 
-    List<ProductModel> productList = [];
-    for (int i = 0; i < mainList.length; i++) {
-      productList.add(ProductModel.fromJson(mainList[i]));
+      List<ProductModel> productList = [];
+      for (int i = 0; i < mainList.length; i++) {
+        productList.add(ProductModel.fromJson(mainList[i]));
+      }
+      return productList;
+    } else {
+      throw Exception(
+          'there is a problem with status code ${response.statusCode}');
     }
-    return productList;
   }
 }
