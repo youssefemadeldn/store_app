@@ -11,7 +11,7 @@ class ApiHelper {
       return jsonDecode(response.body);
     } else {
       throw Exception(
-          'there is a problem with status code ${response.statusCode}');
+          'status code error: ${response.statusCode}, body error: ${jsonDecode(response.body)}');
     }
   }
 
@@ -30,7 +30,7 @@ class ApiHelper {
       return (response.body);
     } else {
       throw Exception(
-          'there is a problem with status code ${response.statusCode}');
+          'status code error: ${response.statusCode}, body error: ${jsonDecode(response.body)}');
     }
   }
 }
