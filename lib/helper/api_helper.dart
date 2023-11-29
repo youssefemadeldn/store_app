@@ -31,7 +31,7 @@ class ApiHelper {
         await http.post(Uri.parse(url), body: body, headers: headers);
 
     if (response.statusCode == 200) {
-      return (response.body);
+      return (jsonDecode(response.body));
     } else {
       throw Exception(
           'status code error: ${response.statusCode}, body error: ${jsonDecode(response.body)}');
@@ -51,7 +51,7 @@ class ApiHelper {
         await http.put(Uri.parse(url), body: body, headers: headers);
 
     if (response.statusCode == 200) {
-      return (response.body);
+      return (jsonDecode(response.body));
     } else {
       throw Exception(
           'status code error: ${response.statusCode}, body error: ${jsonDecode(response.body)}');
