@@ -12,8 +12,6 @@ class CustomCard extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.topLeft,
-          height: 90,
-          width: 150,
           decoration: const BoxDecoration(),
           child: const Card(
             elevation: 10,
@@ -44,10 +42,10 @@ class CustomCard extends StatelessWidget {
         ),
         Positioned(
           right: 30,
-          bottom: 60,
+          bottom: 70,
           child: Image.network(
             'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-            height: 70,
+            height: 95,
           ),
         ),
       ],
