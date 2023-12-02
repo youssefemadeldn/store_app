@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/widgets/custom_text_field.dart';
 
 class UpdateProductPage extends StatelessWidget {
   static String id = 'UpdateProductPage';
@@ -18,6 +19,22 @@ class UpdateProductPage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomTextField(hintText: 'Product Name'),
+            const SizedBox(height: 25),
+            CustomTextField(hintText: 'Description'),
+            const SizedBox(height: 25),
+            CustomTextField(hintText: 'Price'),
+            const SizedBox(height: 25),
+            CustomTextField(hintText: 'Image'),
+            const SizedBox(height: 25),
+          ],
+        ),
       ),
     );
   }
