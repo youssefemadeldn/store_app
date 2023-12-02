@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_text_field.dart';
 
 class UpdateProductPage extends StatelessWidget {
@@ -32,7 +33,9 @@ class UpdateProductPage extends StatelessWidget {
             CustomTextField(hintText: 'Price'),
             const SizedBox(height: 25),
             CustomTextField(hintText: 'Image'),
-            const SizedBox(height: 25),
+            const SizedBox(height: 60),
+            CustomButton(text: 'Submit', onTap: () {}, color: Colors.blue),
+            const SizedBox(height: 60),
           ],
         ),
       ),
