@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
             if (snapshot.hasData) {
               List<ProductModel> listOfProducts = snapshot.data!;
               return GridView.builder(
+                itemCount: listOfProducts.length,
                 clipBehavior: Clip.none,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
