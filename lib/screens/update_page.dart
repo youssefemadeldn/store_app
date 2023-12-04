@@ -4,7 +4,9 @@ import 'package:store_app/widgets/custom_text_field.dart';
 
 class UpdateProductPage extends StatelessWidget {
   static String id = 'UpdateProductPage';
-  const UpdateProductPage({super.key});
+  String? productName, description, image;
+  double? price;
+  UpdateProductPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,20 +25,45 @@ class UpdateProductPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CustomTextField(hintText: 'Product Name'),
-            const SizedBox(height: 25),
-            CustomTextField(hintText: 'Description'),
-            const SizedBox(height: 25),
-            CustomTextField(hintText: 'Price'),
-            const SizedBox(height: 25),
-            CustomTextField(hintText: 'Image'),
-            const SizedBox(height: 60),
-            CustomButton(text: 'Submit', onTap: () {}, color: Colors.blue),
-            const SizedBox(height: 60),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 80,
+              ),
+              CustomTextField(
+                hintText: 'Product Name',
+                onChanged: (data) {
+                  productName = data;
+                },
+              ),
+              const SizedBox(height: 10),
+              CustomTextField(
+                hintText: 'Description',
+                onChanged: (data) {
+                  description = data;
+                },
+              ),
+              const SizedBox(height: 10),
+              CustomTextField(
+                hintText: 'Price',
+                textInputType: TextInputType.number,
+                onChanged: (data) {
+                  price = double.parse(data);
+                },
+              ),
+              const SizedBox(height: 10),
+              CustomTextField(
+                hintText: 'Image',
+                onChanged: (data) {
+                  image = data;
+                },
+              ),
+              const SizedBox(height: 60),
+              CustomButton(text: 'Update', onTap: () {}, color: Colors.blue),
+              const SizedBox(height: 60),
+            ],
+          ),
         ),
       ),
     );
