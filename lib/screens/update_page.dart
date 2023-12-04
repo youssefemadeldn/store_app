@@ -5,7 +5,7 @@ import 'package:store_app/widgets/custom_text_field.dart';
 class UpdateProductPage extends StatelessWidget {
   static String id = 'UpdateProductPage';
   String? productName, description, image;
-  double? price;
+  String? price;
   UpdateProductPage({super.key});
 
   @override
@@ -28,7 +28,7 @@ class UpdateProductPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               CustomTextField(
@@ -49,7 +49,7 @@ class UpdateProductPage extends StatelessWidget {
                 hintText: 'Price',
                 textInputType: TextInputType.number,
                 onChanged: (data) {
-                  price = double.parse(data);
+                  price = data;
                 },
               ),
               const SizedBox(height: 10),
