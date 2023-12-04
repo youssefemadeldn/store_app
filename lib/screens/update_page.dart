@@ -4,6 +4,7 @@ import 'package:store_app/models/product_model.dart';
 import 'package:store_app/services/e_update_product_service.dart';
 import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_text_field.dart';
+import 'package:store_app/widgets/show_snac_bar.dart';
 
 class UpdateProductPage extends StatefulWidget {
   static String id = 'UpdateProductPage';
@@ -83,9 +84,9 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                       setState(() {});
                       try {
                         updateProduct(product);
-                        print('Success');
+                        showSnackBar(context, 'Success');
                       } catch (e) {
-                        print('failde');
+                        showSnackBar(context, 'Update Failed');
                         print(e.toString());
                       }
                       isLoading = false;
