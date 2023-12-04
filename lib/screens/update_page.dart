@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
 import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_text_field.dart';
 
@@ -10,6 +11,8 @@ class UpdateProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProductModel product =
+        ModalRoute.of(context)!.settings.arguments as ProductModel;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
