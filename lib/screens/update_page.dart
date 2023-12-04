@@ -105,10 +105,10 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
   void updateProduct(ProductModel product) {
     UpdateProductService().updateProductService(
       id: product.id,
-      title: productName!,
-      price: double.parse(price!),
-      description: description!,
-      image: image!,
+      title: productName == null ? product.title : productName!,
+      price: price == null ? product.price : double.parse(price!),
+      description: description == null ? product.description : description!,
+      image: image == null ? product.image : image!,
       category: product.category,
     );
   }
