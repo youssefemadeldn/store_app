@@ -75,14 +75,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
               CustomButton(
                   text: 'Update',
                   onTap: () {
-                    UpdateProductService().updateProductService(
-                      id: product.id,
-                      title: productName!,
-                      price: double.parse(price!),
-                      description: description!,
-                      image: image!,
-                      category: product.category,
-                    );
+                    updateProduct(product);
                   },
                   color: Colors.blue),
               const SizedBox(height: 60),
@@ -90,6 +83,17 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
           ),
         ),
       ),
+    );
+  }
+
+  void updateProduct(ProductModel product) {
+    UpdateProductService().updateProductService(
+      id: product.id,
+      title: productName!,
+      price: double.parse(price!),
+      description: description!,
+      image: image!,
+      category: product.category,
     );
   }
 }
