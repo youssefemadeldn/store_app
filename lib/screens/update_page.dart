@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/models/product_model.dart';
+import 'package:store_app/services/e_update_product_service.dart';
 import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_text_field.dart';
 
@@ -63,7 +64,19 @@ class UpdateProductPage extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 60),
-              CustomButton(text: 'Update', onTap: () {}, color: Colors.blue),
+              CustomButton(
+                  text: 'Update',
+                  onTap: () {
+                    UpdateProductService().updateProductService(
+                      id: product.id,
+                      title: productName!,
+                      price: double.parse(price!),
+                      description: description!,
+                      image: image!,
+                      category: product.category,
+                    );
+                  },
+                  color: Colors.blue),
               const SizedBox(height: 60),
             ],
           ),
