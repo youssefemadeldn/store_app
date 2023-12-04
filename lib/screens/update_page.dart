@@ -4,11 +4,19 @@ import 'package:store_app/services/e_update_product_service.dart';
 import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_text_field.dart';
 
-class UpdateProductPage extends StatelessWidget {
+class UpdateProductPage extends StatefulWidget {
   static String id = 'UpdateProductPage';
-  String? productName, description, image;
-  String? price;
+
   UpdateProductPage({super.key});
+
+  @override
+  State<UpdateProductPage> createState() => _UpdateProductPageState();
+}
+
+class _UpdateProductPageState extends State<UpdateProductPage> {
+  String? productName, description, image;
+
+  String? price;
 
   @override
   Widget build(BuildContext context) {
